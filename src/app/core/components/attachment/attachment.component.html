@@ -1,0 +1,14 @@
+<div
+  class="flex relative border-2 border-secondary px-3 py-2 min-w-[200px] max-w-[250px] gap-2 items-center"
+>
+  <span
+    class="absolute top-[1px] right-[10px] font-bold text-secondary cursor-pointer"
+    (click)="delete()"
+    >x</span
+  >
+  <span class="font-bold text-secondary">{{ typeReferenced }}</span>
+  <div class="flex flex-col w-[180px]">
+    <span class="text-primary font-semibold truncate">{{ name }}</span>
+    <span class="text-secondary">{{ type }}</span>
+  </div>
+</div>
