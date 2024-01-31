@@ -7,6 +7,6 @@ Este proyecto front-end, desarrollado con Angular CLI, proporciona un panel de c
 Este proyecto incluye un archivo Dockerfile para facilitar la creación de un contenedor.
 
 ```bash
-docker build -t newsletter-app-frontend .
-docker run -p 4200:4200 --env-file .env newsletter-app-frontend
+docker build -t dashboard-newsletter .
+docker run -d -p 4201:80 dashboard-newsletter
 ```
