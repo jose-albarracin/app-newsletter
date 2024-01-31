@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './feature/components/layout/layout.component';
 
-const MAIN = '/';
+const MAIN = '/emails';
 const routes: Routes = [
   { path: '', redirectTo: MAIN, pathMatch: 'full' },
   {
     path: '',
-    component:LayoutComponent,
+    component: LayoutComponent,
     loadChildren: () =>
       import('./feature/feature.module').then((i) => i.FeatureModule),
   },

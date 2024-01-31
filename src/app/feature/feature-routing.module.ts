@@ -7,10 +7,6 @@ import { EmailListComponent } from './components/email-list/email-list.component
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent,
-  },
-  {
     path: 'emails',
     component: EmailListComponent,
   },
@@ -18,7 +14,7 @@ const routes: Routes = [
     path: 'emails/:action',
     component: EmailNewsletterComponent,
   },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: 'emails', pathMatch: 'full' },
 ];
 
 @NgModule({

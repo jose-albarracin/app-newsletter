@@ -34,7 +34,6 @@ export class EmailNewsletterComponent implements OnInit {
 
     if (this.typeSingle == 'edit') {
       this.newsletterService.getNewsletterData.subscribe((data) => {
-        console.log('verifricacion: ', data);
         if (data && Object.keys(data).length === 0)
           this.router.navigate(['emails']);
 
@@ -48,7 +47,6 @@ export class EmailNewsletterComponent implements OnInit {
           category: data.category,
           content: data.content,
         });
-        console.log('Datos recibidos en editar:', data);
       });
     } else if (this.typeSingle == 'create') {
       this.typeFinal = 'Crear';
@@ -72,7 +70,6 @@ export class EmailNewsletterComponent implements OnInit {
 
   saveNewsletter(): void {
     const dataCurrent = this.newsletterData.value;
-    console.log('datos enviados: ', dataCurrent);
 
     const dataFinal = {
       ...dataCurrent,
@@ -82,7 +79,6 @@ export class EmailNewsletterComponent implements OnInit {
     if (this.typeSingle == 'create') {
       this.newsletterService.createNewsletter(dataFinal).subscribe({
         next: (data) => {
-          console.log('RESULTADO DE LA CREACION: ', data);
           this.router.navigate(['emails']);
         },
         error: (error) => {
@@ -97,7 +93,6 @@ export class EmailNewsletterComponent implements OnInit {
       };
       this.newsletterService.updateNewsletter(dataFinaltoEdit).subscribe({
         next: (data) => {
-          console.log('RESULTADO DE LA EDICION: ', data);
           this.router.navigate(['emails']);
         },
         error: (error) => {
@@ -108,7 +103,6 @@ export class EmailNewsletterComponent implements OnInit {
   }
 
   controlAttachments(event: any) {
-    console.log('Archivo cargado: ', event.target.files);
     const file = event.target.files[0];
 
     let dataBase64 = null;
@@ -128,13 +122,10 @@ export class EmailNewsletterComponent implements OnInit {
       };
 
       this.dataAttachments.push(attachmentFinalData);
-      console.log('dataAttachments: ', this.dataAttachments);
     };
     reader.readAsDataURL(file);
 
     const size = (file.size / 1048576).toFixed(2) + ' MB';
-
-    console.log('size: ', size);
   }
 
   deleteAtachment(attachment: any) {
@@ -145,9 +136,7 @@ export class EmailNewsletterComponent implements OnInit {
   sendNewsletter(): void {
     const id = this.data.id;
     this.newsletterService.sendNewsletter(id).subscribe({
-      next: (data) => {
-        console.log('RESULTADO DE LA ENVIO a los SUBS: ', data);
-      },
+      next: (data) => {},
       error: (error) => {
         console.log(error);
       },

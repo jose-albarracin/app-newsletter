@@ -26,10 +26,8 @@ export class EmailListComponent implements OnInit {
   }
 
   deleteNewsletter(id: string) {
-    console.log('Id a eliminar: ', id);
     this.newsletterService.deleteNewsletter(id).subscribe({
       next: (data) => {
-        console.log('RESULTADO DE LA ELIMINACION: ', data);
         this.getNewslettersList();
       },
       error: (error) => {

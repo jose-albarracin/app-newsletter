@@ -41,7 +41,6 @@ export class InputDynamicComponent implements OnInit, OnChanges {
   }
   writting(): void {
     this.dataWritting.emit(this.value);
-    console.log('han cambiado cosas', this.value);
   }
 
   selectItem(itemData: any): void {
@@ -57,7 +56,6 @@ export class InputDynamicComponent implements OnInit, OnChanges {
 
   toggleVisible(): void {
     this.visible = !this.visible;
-    console.log(this.visible);
   }
 
   goEnter(): void {
