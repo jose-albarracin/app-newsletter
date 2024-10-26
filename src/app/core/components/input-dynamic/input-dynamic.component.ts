@@ -24,7 +24,7 @@ export class InputDynamicComponent implements OnInit, OnChanges {
   @Output() sendOption = new EventEmitter<any>();
   @Output() enter = new EventEmitter<any>();
 
-  apiKeyTinymce: string = '62mbevzlthg4grekdi6c69vm3yk74rub6awr4cg8nde29qko';
+  apiKeyTinymce: string = 'gzqzls8umfw77eatpfn2m7skfk1u8afmbpv4x5mim14gtudi';
 
   visible: boolean = false;
 

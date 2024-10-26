@@ -5,7 +5,6 @@ import { NewsletterServiceService } from '../../shared/services/newsletter-servi
 @Component({
   selector: 'app-email-list',
   templateUrl: './email-list.component.html',
-  styleUrls: ['./email-list.component.scss'],
 })
 export class EmailListComponent implements OnInit {
   listNewsletters: any[] = [];
@@ -22,16 +21,13 @@ export class EmailListComponent implements OnInit {
   goSingle(data: any) {
     this.newsletterService.setNewsletterData = data;
 
-    this.router.navigate(['/emails/edit']);
+    this.router.navigate(['/dashboard/emails/edit']);
   }
 
   deleteNewsletter(id: string) {
     this.newsletterService.deleteNewsletter(id).subscribe({
       next: (data) => {
         this.getNewslettersList();
-      },
-      error: (error) => {
-        console.log(error);
       },
     });
   }
@@ -40,9 +36,6 @@ export class EmailListComponent implements OnInit {
     this.newsletterService.getNewsletters().subscribe({
       next: (data) => {
         this.listNewsletters = data;
-      },
-      error: (error) => {
-        console.log(error);
       },
     });
   }

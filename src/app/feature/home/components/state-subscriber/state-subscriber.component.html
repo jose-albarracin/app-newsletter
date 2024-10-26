@@ -1,0 +1,44 @@
+<div class="container mx-auto max-w-5xl px-4 h-full my-8">
+  <div class="flex flex-col justify-start items-center h-full w-full gap-8">
+    <div
+      *ngIf="isSuscriber; else default"
+      class="flex flex-col gap-4 items-center"
+    >
+      <h1 class="text-2xl font-bold text-center">Te encuentras subscrito</h1>
+
+      <span class="text-center font-medium"
+        >Desea dejar de recibir boletines?</span
+      >
+      <div class="flex gap-3">
+        <button
+          class="bg-primary text-white font-bold text-xl hover:text-primary hover:bg-white border-2 border-primary px-3 py-1 transition-al"
+          routerLink="/"
+        >
+          Cancelar
+        </button>
+        <button
+          class="bg-primary text-white font-bold text-xl hover:text-primary hover:bg-white border-2 border-primary px-3 py-1 transition-al"
+          (click)="unSuscriber()"
+        >
+          Desuscribirse
+        </button>
+      </div>
+    </div>
+    <ng-template #default>
+      <div class="flex flex-col gap-4 items-center">
+        <h1 class="text-2xl font-bold text-center">
+          No se encuentra suscrito a algún Boletín
+        </h1>
+
+        <div class="flex gap-3">
+          <button
+            class="bg-primary text-white font-bold text-xl hover:text-primary hover:bg-white border-2 border-primary px-3 py-1 transition-al"
+            routerLink="/home"
+          >
+            Ir a Home
+          </button>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

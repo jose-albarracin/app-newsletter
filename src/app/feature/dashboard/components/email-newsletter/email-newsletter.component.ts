@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NewsletterServiceService } from '../../shared/services/newsletter-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NewsletterServiceService } from '../../shared/services/newsletter-service.service';
 
 @Component({
   selector: 'app-email-newsletter',
   templateUrl: './email-newsletter.component.html',
-  styleUrls: ['./email-newsletter.component.scss'],
 })
 export class EmailNewsletterComponent implements OnInit {
   newsletterData: FormGroup;
@@ -79,10 +78,7 @@ export class EmailNewsletterComponent implements OnInit {
     if (this.typeSingle == 'create') {
       this.newsletterService.createNewsletter(dataFinal).subscribe({
         next: (data) => {
-          this.router.navigate(['emails']);
-        },
-        error: (error) => {
-          console.log(error);
+          this.router.navigate(['/dashboard']);
         },
       });
     }
@@ -93,10 +89,7 @@ export class EmailNewsletterComponent implements OnInit {
       };
       this.newsletterService.updateNewsletter(dataFinaltoEdit).subscribe({
         next: (data) => {
-          this.router.navigate(['emails']);
-        },
-        error: (error) => {
-          console.log(error);
+          this.router.navigate(['/dashboard']);
         },
       });
     }
@@ -136,10 +129,7 @@ export class EmailNewsletterComponent implements OnInit {
   sendNewsletter(): void {
     const id = this.data.id;
     this.newsletterService.sendNewsletter(id).subscribe({
-      next: (data) => {},
-      error: (error) => {
-        console.log(error);
-      },
+      next: () => {},
     });
   }
 }

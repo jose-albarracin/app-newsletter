@@ -5,7 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { InterceptorMainInterceptor } from './feature/interceptors/interceptor-main.interceptor';
+import { InterceptorMainInterceptor } from './core/interceptors/interceptor-main.interceptor';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +15,7 @@ import { InterceptorMainInterceptor } from './feature/interceptors/interceptor-m
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    CoreModule,
   ],
   providers: [
     {

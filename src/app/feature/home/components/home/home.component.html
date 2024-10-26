@@ -1,0 +1,43 @@
+<div class="container mx-auto max-w-5xl px-4 h-[calc(100vh-104px)]">
+  <div class="flex flex-col justify-center items-center h-full w-full gap-8">
+    <div class="flex flex-col gap-3 w-full max-w-[300px]">
+      <h1 class="text-2xl font-bold text-center">Suscribete para Promos</h1>
+      <input
+        type="email"
+        placeholder="Ingresa tu correo"
+        class="border-2 border-primary rounded-xl px-3 py-1"
+        [(ngModel)]="value"
+      />
+      <span class="text-sm text-red-600 text-center my-2" *ngIf="message1">{{
+        message1
+      }}</span>
+      <button
+        class="bg-primary text-white font-bold text-xl hover:text-primary hover:bg-white border-2 border-primary px-3 py-2 transition-all"
+        (click)="sendData1()"
+      >
+        Enviar
+      </button>
+    </div>
+
+    <hr />
+
+    <div class="flex flex-col gap-3 w-full max-w-[300px]">
+      <h1 class="text-2xl font-bold text-center">Suscribete Noticias</h1>
+      <input
+        type="email"
+        placeholder="Ingresa tu correo"
+        class="border-2 border-primary rounded-xl px-3 py-1"
+        [(ngModel)]="value2"
+      />
+      <span class="text-sm text-red-600 text-center my-2" *ngIf="message2">{{
+        message2
+      }}</span>
+      <button
+        class="bg-primary text-white font-bold text-xl hover:text-primary hover:bg-white border-2 border-primary px-3 py-2 transition-all"
+        (click)="sendData2()"
+      >
+        Enviar
+      </button>
+    </div>
+  </div>
+</div>

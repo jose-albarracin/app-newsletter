@@ -1,15 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LayoutComponent } from './feature/components/layout/layout.component';
 
-const MAIN = '/emails';
+const MAIN = '/home';
 const routes: Routes = [
   { path: '', redirectTo: MAIN, pathMatch: 'full' },
   {
     path: '',
-    component: LayoutComponent,
-    loadChildren: () =>
-      import('./feature/feature.module').then((i) => i.FeatureModule),
+    children: [
+      {
+        path: 'home',
+        loadChildren: () =>
+          import('./feature/home/home.module').then((i) => i.HomeModule),
+      },
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('./feature/dashboard/dashboard.module').then(
+            (i) => i.DashboardModule
+          ),
+      },
+    ],
   },
   { path: '**', redirectTo: MAIN, pathMatch: 'full' },
 ];

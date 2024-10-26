@@ -37,6 +37,7 @@ import { AttachmentComponent } from './components/attachment/attachment.componen
     ButtomComponent,
     SvgIconComponent,
     AttachmentComponent,
+    MatIconModule,
   ],
 })
 export class CoreModule {}

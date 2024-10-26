@@ -11,12 +11,7 @@ export class NewsletterServiceService {
   loader: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private newsletterData: BehaviorSubject<any> = new BehaviorSubject<any>({});
 
-  constructor(private http: HttpClient) {
-    /* this.headers = new HttpHeaders().append(
-      'Access-Control-Allow-Credentials',
-      'true'
-    ); */
-  }
+  constructor(private http: HttpClient) {}
 
   get getNewsletterData() {
     return this.newsletterData.asObservable();

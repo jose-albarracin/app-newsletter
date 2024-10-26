@@ -1,1 +1,12 @@
-<router-outlet></router-outlet>
+<div class="relative h-full">
+  <app-nav-bar></app-nav-bar>
+
+  <div
+    *ngIf="spiner"
+    @openClose
+    class="fixed w-full h-full flex justify-center items-center bg-white/80 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50"
+  >
+    <app-svg-icon class="w-[200px] h-fit"></app-svg-icon>
+  </div>
+  <router-outlet></router-outlet>
+</div>
